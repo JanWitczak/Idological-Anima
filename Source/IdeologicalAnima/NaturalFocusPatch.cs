@@ -6,12 +6,13 @@ using Verse;
 
 namespace IdeologicalAnima
 {
-	public class HarmonyPatches : Verse.Mod
+	[StaticConstructorOnStartup]
+	static class HarmonyPatches
 	{
-		public HarmonyPatches(ModContentPack content) : base(content)
+		static HarmonyPatches()
 		{
-			var harmony = new Harmony("Azuraal.IdeologicalAnima");
-			var assembly = Assembly.GetExecutingAssembly();
+			Harmony harmony = new Harmony("Azuraal.IdeologicalAnima");
+			Assembly assembly = Assembly.GetExecutingAssembly();
 			harmony.PatchAll(assembly);
 		}
 
@@ -45,7 +46,6 @@ namespace IdeologicalAnima
 		}
 	}
 
-	[StaticConstructorOnStartup]
 	public class IdeologicalAnimaMod : Verse.Mod
 	{
 		public static IdeologicalAnimaSettings Settings;
