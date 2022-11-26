@@ -28,10 +28,17 @@ namespace IdeologicalAnima
 		}
 		static void Postfix(ref bool __result, string ___defName, Pawn p)
 		{
-			if (___defName == "Natural" && p.Ideo != null)
+			if (p.Ideo != null)
 			{
-				if (p.Ideo.HasPrecept(Trees_Precept)) __result = true;
-				else if (!IdeologicalAnimaMod.Settings.InateTribalNaturalFocus) __result = false;
+				if (___defName == "Natural")
+				{
+					if (p.Ideo.HasPrecept(Trees_Precept)) __result = true;
+					else if (!IdeologicalAnimaMod.Settings.InateTribalNaturalFocus) __result = false;
+				}
+				else if (___defName == "Artistic")
+				{
+					if (!p.Ideo.HasPrecept(Trees_Precept) && !IdeologicalAnimaMod.Settings.InateTribalNaturalFocus) __result = true;
+				}
 			}
 		}
 	}
