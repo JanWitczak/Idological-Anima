@@ -7,7 +7,7 @@
 		<li>1.4</li>
 	</supportedVersions>
 	<packageId>azuraal.ideologicalanima</packageId>
-<description>Moves Natural meditation focus type from tribal childhood backstory into the Trees: Desired ideoligion precept</description>
+	<description>Adds natural meditation focus type to the Trees: Desired ideoligion precept.</description>
 	<modDependencies>
 		<li>
 			<packageId>Ludeon.RimWorld.Royalty</packageId>
